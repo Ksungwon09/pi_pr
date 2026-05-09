@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+public/data/pi-10m.txt
+public/data/pi-1m-dl.txt

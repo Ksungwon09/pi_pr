@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Layout } from './components/Layout';
-import { MonteCarlo } from './components/MonteCarlo';
-import { GregoryLeibniz } from './components/GregoryLeibniz';
-import { Archimedes } from './components/Archimedes';
 import { FunWithPi } from './components/FunWithPi';
+import { MonteCarloCategory } from './components/categories/MonteCarloCategory';
+import { InfiniteSeriesCategory } from './components/categories/InfiniteSeriesCategory';
+import { GeometricCategory } from './components/categories/GeometricCategory';
 
 function App() {
   const [activeTab, setActiveTab] = useState('monte-carlo');
@@ -11,15 +11,15 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'monte-carlo':
-        return <MonteCarlo />;
-      case 'gregory-leibniz':
-        return <GregoryLeibniz />;
-      case 'archimedes':
-        return <Archimedes />;
+        return <MonteCarloCategory />;
+      case 'infinite-series':
+        return <InfiniteSeriesCategory />;
+      case 'geometric':
+        return <GeometricCategory />;
       case 'fun-with-pi':
         return <FunWithPi />;
       default:
-        return <MonteCarlo />;
+        return <MonteCarloCategory />;
     }
   };
 
