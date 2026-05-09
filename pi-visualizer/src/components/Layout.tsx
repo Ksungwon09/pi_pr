@@ -7,9 +7,9 @@ interface LayoutProps {
 }
 
 const navItems = [
-  { id: 'monte-carlo', label: 'Monte Carlo Method' },
-  { id: 'gregory-leibniz', label: 'Gregory-Leibniz Series' },
-  { id: 'archimedes', label: 'Archimedes Polygons' },
+  { id: 'monte-carlo', label: 'Monte Carlo Methods' },
+  { id: 'infinite-series', label: 'Infinite Series' },
+  { id: 'geometric', label: 'Geometric Methods' },
   { id: 'fun-with-pi', label: 'Fun with Pi' },
 ];
 

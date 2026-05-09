@@ -68,9 +68,14 @@ export const GregoryLeibniz = () => {
     }
   }, [drawBackground]);
 
+  // Initial draw, without setting reactive state unnecessarily
   useEffect(() => {
-    reset();
-  }, [reset]);
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) drawBackground(ctx);
+    }
+  }, [drawBackground]);
 
   const loop = useCallback(() => {
     const canvas = canvasRef.current;
@@ -127,6 +132,7 @@ export const GregoryLeibniz = () => {
     setIterations(iterationsRef.current);
     setPiEstimate(currentPiRef.current);
 
+    // eslint-disable-next-line react-hooks/immutability
     requestRef.current = requestAnimationFrame(loop);
   }, [drawBackground]);
 
